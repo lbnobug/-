@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 基于接口方式定义映射文件时的规则:
+ 1) 映射文件中的命名空间与接口类全名(全限定名)相同
+ 2) 映射文件中的元素与接口方法对应(
+        例如元素id应与方法名相同)
+ 假如如上两点不满足,运行时可能会出现
+ BindingException
+ -->
+<mapper namespace="com.jt.sys.dao.SysConfigDao">
+    <select id="findPageObjects"
+            resultType="com.jt.sys.entity.SysConfig">
+            select *
+            from sys_configs
+            limit ${startIndex},${pageSize}
+    </select>
+</mapper>
+
+
+
